@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testForm(){
+				//获取表单 1.通过ID获取；2.通过表单名字获取
+				var frm1 = document.getElementById("myForm");
+				var frm2 = document.meFrm;
+				//比较是否为同一个对象
+//				alert(frm1 == frm2);
+				//操作表单属性(action控制了表单提交的地址)
+				frm1.action = "https://www.baidu.com";
+				//操作属性(method控制了表单的提交方式)
+//				frm1.method = "post";
+                //重置表单
+//              frm1.reset();
+                //提交表单
+                frm1.submit();
+			};
+		</script>
+	</head>
+	<body>
+		<h1>JS如何操作form表单</h1>
+		<input type="button" name="" value="操作" onclick="testForm();"/>
+		<hr />
+		<form id="myForm" name="meFrm" action="" method="get">
+			<input type="text" name="uname" value="hello" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

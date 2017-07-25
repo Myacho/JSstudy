@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testBack(){
+				window.history.back();
+			};
+			function testForward(){
+				window.history.forward();
+			};
+			function testGo(num){
+				window.history.go(num);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>h03</h1>
+		<a href="h04.html">h04</a>
+		<hr />
+		<input type="button" name="" id="" value="前进>>" onclick="testForward();"/>
+		<input type="button" name="" id="" value="<<后退" onclick="testBack();"/>
+		<hr />
+		<input type="button" name="" id="" value="GO前进>>" onclick="testGo(1);"/>
+		<input type="button" name="" id="" value="GO前进2>>" onclick="testGo(2);"/>
+		<input type="button" name="" id="" value="<<刷新当前页面>>" onclick="testGo(0);"/>
+		<input type="button" name="" id="" value="<<后退GO" onclick="testGo(-1);"/>
+	</body>
+</html>

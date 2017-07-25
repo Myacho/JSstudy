@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 100px;
+				line-height:100px ;
+				background-color: chocolate;
+			}
+		</style>
+		<script type="text/javascript">
+			function changeText(){
+				var gf = document.getElementById("gf");
+				//改变文本值
+//				gf.innerHTML = "<h1>名花有主</h1>";
+				//改变文档的机构
+//				alert(gf.innerHTML);
+				alert(gf.innerText);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>如何用JS改变元素的文本</h1>
+		<input type="button" name="" id="" value="hello hzun" />
+		<div id="gf" onmouseover="changeText();">
+			<h3>含苞待放</h3>
+		</div>
+	</body>
+</html>

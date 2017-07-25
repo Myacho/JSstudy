@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function openMsg(){
+				window.open("https://www.baidu.com","","height=100,width=300");
+			};
+			function testTimeout(){
+				window.setTimeout(openMsg,5000);
+			};
+			
+			var intervalId = 0;
+			function testInterval(){
+				intervalId = window.setInterval(function(){
+					alert(Math.random());
+				},1000);
+			};
+			function testClear(){
+				window.clearInterval(intervalId);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>定时执行</h1>
+		<input type="button" name="" id="" value="执行一次" onclick="testTimeout();"/>
+		<input type="button" name="" id="" value="重复执行" onclick="testInterval();"/>
+		<hr />
+		<input type="button" name="" id="" value="关闭定时器" onclick="testClear();"/>
+	</body>
+</html>

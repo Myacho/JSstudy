@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function operSelect(){
+				//获取元素
+				var school = document.getElementById("school");
+				/*************单选按钮*************/
+				//获取值
+//				alert(school.value);
+				//获取被选择option的索引
+//				alert(school.selectedIndex);
+				//获取当前下拉列表所有的选择项
+//				alert(school.options.length);
+				//option是一个对象，包括text,value
+//				alert(school.options[school.selectedIndex].value);
+//				alert(school.options[school.selectedIndex].text);
+				/***********o**复选按钮*************/
+				var array = [];
+				var os = school.options;
+				//遍历并判断
+				for (var i = 0; i <　os.length; i ++　) {
+					if (os[i].selected) {
+						array.push(os[i].text);
+					}
+				}
+				alert(array);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>操作下拉列表</h1>
+		毕业学校
+		<select id="school" multiple="multiple">
+			<option value="清华">清华大学</option>
+			<option value="北大">北京大学</option>
+			<option value="复旦">复旦大学</option>
+			<option value="哈佛">哈佛大学</option>
+			<option value="浙大">浙江大学</option>
+			<option value="南大">南开大学</option>
+			<option value="交大">交通大学</option>
+			<option value="吉大">吉林大学</option>
+			<option value="同大">同济大学</option>
+			<option value="理工">理工大学</option>
+		</select>
+		<hr />
+		<input type="button" name="" id="school" value="操作下拉列表" onclick="operSelect();"/>
+	</body>
+</html>

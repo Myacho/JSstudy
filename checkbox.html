@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function operCheckbox(){
+				//声明一个变量存放选择的歌曲
+				var array = [];
+				//获取当前歌曲名单
+				var music = document.getElementsByName("music");
+				//循环并判断该歌曲是否被选中
+				for (var i=0; i < music.length; i ++) {
+					//开始判断
+					if(music[i].checked){
+						array.push(music[i].value);
+					}
+				}
+				//打印你所选择的歌曲
+				alert(array);
+			};
+			function choose01(type){
+				//获取所有的歌曲
+				var music = document.getElementsByName("music");
+				//遍历
+				for (var i=0; i < music.length; i ++) {
+					//判断
+					if(type == "all"){
+						music[i].checked = true;
+					}
+					else if(type == "no"){
+						music[i].checked = false;
+					}
+					else if(type == "fx"){
+						music[i].checked = !music[i].checked;
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<h1>听歌网</h1>
+		<input type="checkbox" name="music" value="喜欢你" />喜欢你
+		<br />
+		<input type="checkbox" name="music" value="凉凉" />凉凉
+		<br />
+		<input type="checkbox" name="music" value="刚好遇见你" />刚好遇见你
+		<br />
+		<input type="checkbox" name="music" value="男人KTV" />男人KTV
+		<br />
+		<input type="checkbox" name="music" value="小幸运" />小幸运
+		<br />
+		<input type="checkbox" name="music" value="badBoy" />badBoy
+		<br />
+		<input type="checkbox" name="music" value="丑八怪" />丑八怪
+		<br />
+		<input type="checkbox" name="music" value="悟空" />悟空
+		<br />
+		<hr />
+		<!--<pre>value的值一般是UUID，是唯一的值，作为数据库的主键</pre>-->
+		<input type="button" name="" id="" value="添加到播放列表" onclick="operCheckbox();"/>
+		<input type="button" name="" id="" value="全选" onclick="choose01('all');"/>
+		<input type="button" name="" id="" value="全否" onclick="choose01('no');"/>
+		<input type="button" name="" id="" value="反选" onclick="choose01('fx');"/>
+	</body>
+</html>

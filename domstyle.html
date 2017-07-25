@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ps{
+				border-style: solid;
+				border-color: gold;
+				border-width: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+			function showBorder(){
+				var gfs = document.getElementById("gfs");
+				gfs.className = "ps";
+				gfs.style.width = "120px";
+				gfs.style.backgroundColor = "red";
+			};
+			function hideBorder(){
+				document.getElementById("gfs").className = "";
+				gfs.style.width = "300px";
+				gfs.style.backgroundColor = "white";
+			};
+		</script>
+	</head>
+	<body>
+		<h1>如何通过JS操作CSS样式</h1>
+		<div id="gfs" onmouseout="hideBorder();" onmouseover="showBorder();" style="width: 300px;height: 200px;background-color: brown;">
+			
+		</div>
+	</body>
+</html>

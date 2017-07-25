@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testNavi(){
+				//获取信息
+//				alert("appCodeName:" + window.navigator.appCodeName);
+//				alert("appName:" + window.navigator.appName);
+//				alert("appVersion:" + window.navigator.appVersion);
+//				alert("cookieEnabled:" + window.navigator.cookieEnabled);
+//				alert("platform:" + window.navigator.platform);
+//				alert("userAgent:" + window.navigator.userAgent);
+				//判断是否为IE浏览器
+//				if (window.navigator.userAgent.toUpperCase().indexOf("MSIE") >= 0) {
+//					alert("为了更好的用户体验，请使用Chrome浏览器");
+//				}
+				if (window.navigator.userAgent.toUpperCase().indexOf("CHROME") == -1) {
+					window.location.href = "userAgent.html";
+				}
+			};
+			window.onload = function(){
+				testNavi();
+			};
+		</script>
+	</head>
+	<body>
+		<h1>浏览器信息</h1>
+		<input type="button" name="" id="" value="测试浏览器信息" onclick="testNavi();"/>
+	</body>
+</html>

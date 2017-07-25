@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function testCreat(){
+			//工厂方式
+//			var student = factoryModel("zhangsan",18);
+//			alert(student.name + "-" +student.age);
+//			student.learn();
+			
+			//构造函数方式
+//			var st1 = new Student("xiaohong",18);
+//			alert(st1.name + "-" + st1.age);
+
+            //原型方式
+            //var te = new Teacher();
+            //alert(te.uname);
+//          var t1 = new Teacher();
+//          var t2 = new Teacher();
+//          //修改t1 t2会不会被修改
+//         //t1.uname.toUpperCase();
+//         // t1.uname = t1.uname.toUpperCase();//用”=“赋值，不会修改原型上的属性
+//          t1.fav.push("乒乓球");
+//          //alert(t2.uname);
+//          alert(t2.fav);//t2也变了
+//          t1.fav = ["跳舞"];
+//          alert(t2.fav);//t2不会变
+            
+            //混合的构造函数和原型
+//          var p1 = new Person("小红",18,"女");
+//          var p2 = new Person("小明",28,"男");
+//          p1.speak();
+//          p2.speak();
+
+            //动态原型方式
+            var d1 = new Dog("旺财");
+            //alert(d1._run);//静态变量不能这么使用
+            alert(d1.run());
+		};
+		
+		function Dog(name){
+			//设置属性
+			this.name = name;
+		}
+		//设置原型的时候需要加判断，防止重复
+		if(typeof Dog._run == "undefined"){
+			Dog.prototype.run = function(){
+				alert("狗带铃铛跑得欢");
+			};
+		};
+		//设置判定，别人就不能再设置了
+		Dog._run = true;
+		
+		/**
+		 * 混合方式
+		 * @param {Object} name
+		 * @param {Object} age
+		 * @param {Object} gender
+		 */
+		function Person(name,age,gender){
+			//设置属性
+			this.name = name;
+			this.age = age;
+			this.gender = gender;			
+		};
+		Person.prototype.speak = function(){
+				alert(this.name + "向您问好");
+		};
+		/**
+		 * 原型方式创建对象
+		 */
+		function Teacher(){
+			Teacher.prototype.uname = "zhangzhang";
+			Teacher.prototype.age = 28;
+			Teacher.prototype.fav = ["足球","篮球"];
+			Teacher.prototype.teach = function(){
+				alert("诲人不倦");
+			};
+		};
+		
+		/**
+		 * 构造函数方式（函数首字母大写）
+		 * @param {Object} name
+		 * @param {Object} age
+		 */
+		function Student(name,age){
+			//实例变量
+			this.name = name;
+			this.age = age;
+			this.learn = function(){
+				alert("书山有路勤为径");
+			};
+		};
+			
+		/**
+		 * 工厂方式
+		 * @param {String} name
+		 * @param {Number} age
+		 */
+		function factoryModel(name,age){
+			//创建一个Object对象
+			var obj = new Object();
+			//设置对象的属性和方法
+			obj.name = name;
+			obj.age = age;
+			obj.learn = function (){
+				alert("好好学习");
+			};
+			//返回对象
+			return obj;
+		};
+		
+	</script>
+	<body>
+		<h1>创建对象的5种方式</h1>
+		<input type="button" id="" value="测试创建" onclick="testCreat();" />
+	</body>
+</html>

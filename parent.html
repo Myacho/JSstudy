@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+	        var money = 1000;
+			//BOM还是一个没有统一规则的东西，存在浏览器差异
+			function testOpen(){
+				window.open("son.html","sonPage","height = 100,width = 400,top = 0,left = 0,toolbar = no,menubar = no,scrolls = no,resizable = no,location = no,status = no");
+			};
+			function sayHello(){
+				alert("你好!");
+			}
+		</script>
+	</head>
+	<body>
+		<h1>我是主页面</h1>
+		<input type="button" name="" id="" value="打开子页面" onclick="testOpen();"/>		
+	</body>
+</html>

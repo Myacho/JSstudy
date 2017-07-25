@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function creatChild(){
+				//创建节点
+				var child = document.createElement("input");
+				child.type = "button";
+				child.value = "我是xx" + Math.random();
+				child.onclick = function(){
+//					alert(child.value);
+                    //获取当前节点的父节点，父节点删除子节点
+                    child.parentNode.removeChild(child);
+				};
+				//获取父节点
+				var me = document.getElementById("me");
+				//父节点添加子节点
+				me.appendChild(child);				
+			};
+			function replaceChilds(){
+				//获取父节点
+				var me = document.getElementById("me"); 
+				//获取要替换的子节点
+				var son = document.getElementById("son");
+				//创建新的节点
+				var newSon = document.createElement("span")
+				newSon.innerHTML = "我要替换";
+				//开始替换节点
+				me.replaceChild(newSon,son);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>如何通过JS改变文档结构</h1>
+		<input type="button" name="" id="" value="创建子节点" onclick="creatChild();"/>
+		<input type="button" name="" id="" value="替换子节点" onclick="replaceChilds();"/>
+		<div id="me">
+			<span id="son">
+				我是老大
+			</span>
+		</div>
+	</body>
+</html>

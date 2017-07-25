@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testChild(){
+				var div = document.getElementById("myDiv");
+				//通过父子关系获取子元素
+				var cs = div.childNodes;
+				//为什么有差异，差别在第一个节点FF Chrome
+				alert(cs.length);
+			};
+			function testParent(){
+				var hello = document.getElementById("hello");
+				//获取对应的父节点
+				var ps = hello.parentNode;
+				alert(ps.id);
+			};
+			function testSibling(){
+				var hello = document.getElementById("hello");
+				//获取兄弟节点
+				var nextEle = hello.nextElementSibling;
+				var next = hello.nextSibling;
+				
+				var previousEle = hello.previousElementSibling;
+				var previous = hello.previousSibling;
+				
+				alert(nextEle.value);
+				alert(next.value);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>间接的方式获取元素的节点</h1>
+		<input type="button" value="通过父子关系获取元素节点" onclick="testChild();"/>
+		<input type="button" value="通过子父关系获取元素节点" onclick="testParent();"/>
+		<input type="button" value="通过兄弟关系获取元素节点" onclick="testSibling();"/>
+		<hr />
+		<div id="myDiv">
+			<input type="text" value="1" />
+			<input type="text" value="2" />
+			<input id="hello" type="text" value="3" />
+			<input type="text" value="4" />
+			<input type="text" value="5" />
+		</div>
+	</body>
+</html>

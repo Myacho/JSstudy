@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function operElement(){
+				//获取表单域   1.通过ID获取；2.通过名字获取
+				var myName = document.getElementById("myname");
+				var uname = document.frm.uname;
+				var school = document.getElementById("school");
+//				alert(myName == uname);
+				//操作属性
+//				uname.form.submit();
+//				alert(uname.value);
+//				alert(uname.type);
+//				alert(school.value + "--" + school.type);
+//				uname.disabled = true;
+				//函数，方法
+//				uname.focus();
+				
+			};
+			function changeSubmit(){
+				var sub = document.getElementById("sub");
+				var agree = document.getElementById("agree");
+//				alert(agree.checked);
+				sub.disabled = !agree.checked;
+			};
+		</script>
+	</head>
+	<body onload="document.getElementById('myname').focus();">
+		<h1>表单域的操作</h1>
+		<hr />
+		<input type="button" id="" value="操作表单域" onclick="operElement();"/>
+		<hr />
+		<form name="frm" action="" method="get">
+			<input type="text" name="uname" id="myname" value="" />
+			<select id="school" multiple>
+				<option value="1">北大</option>
+				<option value="2">清华</option>
+				<option value="3">浙大</option>
+			</select>
+			<br />
+			<input type="checkbox" id="agree" value="1" onclick="changeSubmit();"/>阅读并同意
+			<input type="submit" id="sub" disabled="disabled" value="注册信息"/>
+		</form>
+	</body>
+</html>

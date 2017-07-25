@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//www.json.org
+			function testJson(){	
+				//数组
+				var arr1 = new Array();
+				var arr2 = [];
+				//声明一个JSON
+				var obj1 = new Object();
+				var obj2 = [];
+				var obj3 = {
+					"uname":"zhangsan",
+					"realname":"zhangsanfeng",
+					"age":10,
+					run:function(){
+						alert("gogogo...");
+					}
+				};
+				obj3.run();				
+			}
+			
+			function operJson(){
+				//高版本浏览器中操作json
+				var j01 = '{"uname":"zhangsan","realname":"张三"}';
+				var j02 = {"uname":"zhangsan","realname":"张三"};
+				//way1:将字符串转成json对象
+//				eval("var jj = " + j01);
+//				alert(jj.uname);
+                //way2
+//              var jj = JSON.parse(j01);
+//              alert(jj.uname);
+                //将JSON转成字符串
+               // alert(j02);//error,解析不出字符串
+               alert(JSON.stringify(j02));
+			}
+		</script>
+	</head>
+	<body>
+		<h1>JSON</h1>
+		<input type="button" name="" id="" value="测试JSON" onclick="testJson();"/>
+		<input type="button" name="" id="" value="operJson" onclick="operJson()" />
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>	
+		<script type="text/javascript">
+			function testClose(){
+				window.close();
+			};
+			function testOpener(){
+//				window.opener.sayHello();
+                alert(window.opener.money);
+			};
+		</script>
+	</head>
+	<body>
+		<h1>我是被打开的子页面</h1>
+		<input type="button" name="" id="" value="关闭此页" onclick="testClose();"/>
+		<hr />
+		<input type="button" name="" id="" value="子页面调用父页面的方法" onclick="testOpener();"/>
+	</body>
+</html>

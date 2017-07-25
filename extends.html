@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function Animal(){
+			//属性
+			this.color = "red";
+		};
+		Animal.prototype.run = function(){
+			alert("gogogo...");
+		};
+		function Dog(){
+			this.name = "旺财";
+		};
+		
+		//通过prototype实现继承
+		Dog.prototype = new Animal();
+		//先继承父类，在添加自己的原型
+		
+		Dog.prototype.bark = function(){
+			alert("汪汪汪...");
+		};
+		
+		function testExtends(){
+			//创建Dog对象
+			var dog = new Dog();
+			alert(dog.name + "-" + dog.color);
+			//dog.color = "yellow";//dog的颜色变成yellow，但是原型上的颜色不会变
+			dog.bark();//error,bark()必须要放在继承后面才有用
+			dog.run();
+		};
+	</script>
+	<body>
+		<h1>javascript的继承</h1>
+		<input type="button" name="" id="" value="测试JS的继承" onclick="testExtends();" />
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testAlert() {
+				alert("尊敬的用户您好，您的余额不足！" + location.href);
+			};
+
+			function testConfirm() {
+				var flag = window.confirm("您确定要充值吗？");
+				if(flag) {
+					alert("充值成功！");
+				} else {
+					alert("余额不足！");
+				}
+			};
+
+			function testPrompt() {
+				var password = window.prompt("请输入密码", "默认123456");
+				alert(password);
+			};
+
+			function testGame() {
+				var flag = confirm("你是猪吗？");
+				if(flag) {
+					alert("hhhhhh,你说的没错");
+				} else {
+					//一直重复不停地调用自己，但是需要给递归一个程序的出口
+					testGame();
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<h1>三种消息的对话框</h1>
+		<input type="button" name="" id="" value="警告框" onclick="testAlert();" />
+		<input type="button" name="" id="" value="确认框" onclick="testConfirm();" />
+		<input type="button" name="" id="" value="提示框" onclick="testPrompt();" />
+		<hr />
+		<input type="button" name="" id="" value="小游戏" onclick="testGame();" />
+	</body>
+
+</html>
